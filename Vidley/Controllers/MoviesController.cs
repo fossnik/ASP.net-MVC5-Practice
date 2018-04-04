@@ -15,5 +15,23 @@ namespace Vidley.Controllers
             var movie = new Movie() {Name = "Shrek!"};
             return View(movie);
         }
+
+        public ActionResult Edit(int id)
+        {
+            return Content("id=" + id);
+        }
+
+        // movies
+        public ActionResult Index(int? pageIndex, string sortBy)
+        {
+            // record parameters from URL
+            if (pageIndex.HasValue)
+                pageIndex = 1;
+            if (String.IsNullOrEmpty(sortBy))
+                sortBy = "Name";
+
+            // return simple content (the URL parameters)
+            return Content("pageIndex=" + pageIndex + "&sortBy=" + sortBy);
+        }
     }
 }
