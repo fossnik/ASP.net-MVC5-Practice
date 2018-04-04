@@ -14,6 +14,12 @@ namespace Vidley.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() {Name = "Shrek!"};
+            //return View(movie);
+
+            // new way to pass data to our view
+            var viewResult = new ViewResult();
+            viewResult.ViewData.Model = movie;
+
             return View(movie);
         }
 
