@@ -13,6 +13,18 @@ namespace Vidley
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //custom routes
+            routes.MapRoute(
+                "MoviesByReleaseDate",
+                "movies/released/{year}/{month}",
+                new { controller = "Movies", action = "ByReleaseDate" });
+            routes.MapRoute(
+                "MoviesByReleaseDate",
+                "movies/released/{year}/{month}",
+                new {controller = "Movies", action = "ByReleaseDate"},
+                new {year = @"2015|2016", month = @"\d{2}"});
+
+            // default route
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
