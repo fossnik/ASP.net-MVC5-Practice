@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Web;
 using System.Web.Mvc;
 using Vidley.Models;
+using Vidley.ViewModels;
 
 namespace Vidley.Controllers
 {
@@ -14,13 +15,19 @@ namespace Vidley.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() {Name = "Shrek!"};
-            //return View(movie);
+            var customers = new List<Customer>
+            {
+                new Customer {Name = "Customer 1"},
+                new Customer {Name = "Customer 2"}
+            };
 
-            // new way to pass data to our view
-            var viewResult = new ViewResult();
-            viewResult.ViewData.Model = movie;
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
 
-            return View(movie);
+            return View(viewModel);
         }
 
         //public ActionResult Edit(int id)
@@ -41,10 +48,10 @@ namespace Vidley.Controllers
         //    return Content("pageIndex=" + pageIndex + "&sortBy=" + sortBy);
         //}
 
-        [Route("MoviesController/released/{year}/{month:regex(\\d{4}):range(1,12)")]
-        public ActionResult ByReleaseYear(int year, int month)
-        {
-            return Content(year + "/" + month);
-        }
+        //[Route("MoviesController/released/{year}/{month:regex(\\d{4}):range(1,12)")]
+        //public ActionResult ByReleaseYear(int year, int month)
+        //{
+        //    return Content(year + "/" + month);
+        //}
     }
 }

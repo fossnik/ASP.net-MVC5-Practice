@@ -1,8 +1,10 @@
-﻿@model Vidley.Models.Movie
+﻿@*@model Vidley.Models.Movie*@
+@model Vidley.ViewModels.RandomMovieViewModel
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewData</h2>
+<h2>@Model.Movie.Name</h2>
+<h2>Number of Customers: @Model.Customers.Count</h2>
 
