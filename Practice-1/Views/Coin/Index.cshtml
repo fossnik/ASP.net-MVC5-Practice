@@ -1,0 +1,95 @@
+﻿@model Practice_1.Models.Coin
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>@Model.Name</h2>
+
+
+<div>
+    <h4>Coin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Change)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Change)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PChange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PChange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarketCap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarketCap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume24H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volume24H)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalVolume24H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalVolume24H)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CirculatingSupply)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CirculatingSupply)
+        </dd>
+
+    </dl>
+</div>
